@@ -36,7 +36,7 @@ import fi.dy.masa.malilib.util.log.AnsiLogger;
 public class NbtInventory implements AutoCloseable
 {
     private static final AnsiLogger LOGGER = new AnsiLogger(NbtInventory.class, true, true);
-    public static final int VILLAGER_SIZE = 8;
+    public static final int VILLAGER_SIZE = 36;
     public static final int DEFAULT_SIZE = 27;
     public static final int PLAYER_SIZE = 36;
     public static final int DOUBLE_SIZE = 54;

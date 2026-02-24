@@ -198,11 +198,12 @@ public class InventoryOverlay
 			Pair<GpuTextureView, GpuSampler> pair = ctx.bindTexture(TEXTURE_DOUBLE_CHEST);
 			if (pair == null) return;
 
-			RenderUtils.drawTexturedRectBatched(ctx, pair, x     , y     ,   0,   0,   7,  79, color); // left (top)
-			RenderUtils.drawTexturedRectBatched(ctx, pair, x +  7, y     , 133,   0,  43,   7, color); // top (right)
-			RenderUtils.drawTexturedRectBatched(ctx, pair, x     , y + 79,   0, 215,  43,   7, color); // bottom (left)
-			RenderUtils.drawTexturedRectBatched(ctx, pair, x + 43, y +  7, 169, 143,   7,  79, color); // right (bottom)
-			RenderUtils.drawTexturedRectBatched(ctx, pair, x +  7, y +  7,   7,  17,  36,  72, color); // 2x4 slots
+			RenderUtils.drawTexturedRectBatched(ctx, pair, x     , y     ,   0,   0,   7,  79, color); // left
+			RenderUtils.drawTexturedRectBatched(ctx, pair, x +  7, y     ,   7,   0, 169,   7, color); // top
+			RenderUtils.drawTexturedRectBatched(ctx, pair, x     , y + 79,   0, 215, 169,   7, color); // bottom
+			RenderUtils.drawTexturedRectBatched(ctx, pair, x +169, y +  7, 169, 143,   7,  79, color); // right
+			RenderUtils.drawTexturedRectBatched(ctx, pair, x +  7, y +  7,   7,  17, 162,  72, color); // 9x4 slots
+
 		}
 		else if (type == InventoryOverlayType.FIXED_27)
 		{
@@ -857,10 +858,10 @@ public class InventoryOverlay
 		}
 		else if (type == InventoryOverlayType.VILLAGER)
 		{
-			INV_PROPS_TEMP.slotsPerRow = 2;
+			INV_PROPS_TEMP.slotsPerRow = 9;
 			INV_PROPS_TEMP.slotOffsetX = 8;
 			INV_PROPS_TEMP.slotOffsetY = 8;
-			INV_PROPS_TEMP.width = 50;
+			INV_PROPS_TEMP.width = 176;
 			INV_PROPS_TEMP.height = 86;
 		}
 		else if (type == InventoryOverlayType.SINGLE_ITEM)
